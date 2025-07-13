@@ -1,26 +1,56 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { create } from "domain";
+import "./App.css";
+import TheHeader from "./components/header";
+import Overview from "./components/overview";
+import { createTheme, ThemeProvider } from "@mui/material";
+import { useMemo, useState } from "react";
+import { BrowserRouter, Route, Routes } from "react-router";
+import Projects from "./components/projects";
 
-function App() {
+const lightTheme = createTheme({
+  palette: {
+    mode: "light",
+    primary: {
+      main: "#1976d2",
+    },
+    secondary: {
+      main: "#f50057",
+    },
+  },
+});
+
+const darkTheme = createTheme({
+  palette: {
+    mode: "dark",
+    primary: {
+      main: "#6715B9",
+    },
+  },
+});
+
+export default function App() {
+  const [mode, setMode] = useState("dark");
+
+  // Memoize the theme to prevent unnecessary re-renders
+  const theme = useMemo(
+    () => (mode === "dark" ? darkTheme : lightTheme),
+    [mode]
+  );
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme} defaultMode="system">
+      <div className="main-page">
+        <div style={{ height: "10px" }}></div>
+
+        <BrowserRouter>
+          <TheHeader />
+          <Routes>
+            <Route path="/" element={<Overview />} />
+            <Route path="overview" element={<Overview />}></Route>
+            <Route path="projects" element={<Projects />}></Route>
+          </Routes>
+        </BrowserRouter>
+      </div>
+    </ThemeProvider>
   );
 }
-
-export default App;

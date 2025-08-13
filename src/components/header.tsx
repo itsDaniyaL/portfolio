@@ -34,7 +34,14 @@ function TheHeader() {
     setMenuOpen((prev) => !prev);
   };
   return (
-    <header style={{ display: "flex", margin: "0 10px" }}>
+    <header
+      style={{
+        display: "flex",
+        margin: "5px 10px",
+        position: "absolute",
+        width: "-webkit-fill-available",
+      }}
+    >
       <div
         style={{
           flexGrow: 1,

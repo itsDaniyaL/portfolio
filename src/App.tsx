@@ -40,8 +40,6 @@ export default function App() {
   return (
     <ThemeProvider theme={theme} defaultMode="system">
       <div className="main-page">
-        <div style={{ height: "10px" }}></div>
-
         <BrowserRouter>
           <TheHeader />
           <Routes>

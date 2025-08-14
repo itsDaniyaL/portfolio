@@ -1,5 +1,7 @@
-import { Box, InputAdornment, TextField } from "@mui/material";
+import { Box, Button, InputAdornment, TextField } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
+import EastIcon from "@mui/icons-material/East";
+import { East } from "@mui/icons-material";
 
 const items = [
   { id: 1, title: "Item 1", bg: "#FF5733" },
@@ -45,25 +47,68 @@ export default function Projects() {
               margin: "20px 10px 20px 20px",
             }}
           >
-            <Box sx={{ display: "flex" }}>
-              <img
-                src={require("../assets/khata_icon.png")}
-                style={{ height: "50px" }}
-              ></img>
-              <h1
-                style={{
-                  fontSize: "18px",
-                  color: "#E6E1E3",
-                  marginLeft: "20px",
-                  fontWeight: "bold",
-                }}
-              >
-                Khata at Home
-              </h1>
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-between",
+                height: "100%",
+              }}
+            >
+              <Box>
+                <Box sx={{ display: "flex" }}>
+                  <img
+                    src={require("../assets/khata_icon.png")}
+                    style={{ height: "50px" }}
+                  ></img>
+                  <h1
+                    style={{
+                      fontSize: "18px",
+                      color: "#E6E1E3",
+                      marginLeft: "20px",
+                      fontWeight: "bold",
+                      alignContent: "center",
+                    }}
+                  >
+                    Khata at Home
+                  </h1>
+                </Box>
+                <h1 style={{ color: "#E6E1E3", margin: "20px 0" }}>
+                  Take control of your Khata, take control of your life.
+                </h1>
+              </Box>
+              <Box>
+                <Button
+                  variant="contained"
+                  sx={{
+                    background: "#1D221D",
+                    width: "150px",
+                    height: "50px",
+                    borderRadius: "15px",
+                    display: "flex",
+                    flexDirection: "column",
+                    textTransform: "none",
+                    alignItems: "flex-start",
+                  }}
+                >
+                  <Box sx={{ display: "flex" }}>
+                    <p
+                      style={{
+                        fontSize: "10px",
+                        marginRight: "5px",
+                        color: "#E6E1E3",
+                      }}
+                    >
+                      Read more
+                    </p>
+                    <EastIcon sx={{ fontSize: "15px" }} />
+                  </Box>
+                  <p style={{ color: "#E6E1E3", fontWeight: "bold" }}>
+                    Project Details
+                  </p>
+                </Button>
+              </Box>
             </Box>
-            <h1 style={{ color: "#E6E1E3" }}>
-              Take control of your Khata, take control of your life.
-            </h1>
           </Box>
           <Box
             sx={{

@@ -1,0 +1,22 @@
+[
+  {
+    "title": "Email",
+    "data": "daniyal.ahmad.rizwan@hotmail.com",
+    "link": "mailto:daniyal.ahmad.rizwan@hotmail.com"
+  },
+  {
+    "title": "Phone",
+    "data": "+92 334 6943899",
+    "link": "tel:+15551234567"
+  },
+  {
+    "title": "LinkedIn",
+    "data": "linkedin.com/in/daniyal-ahmad-rizwan/",
+    "link": "https://www.linkedin.com/in/daniyal-ahmad-rizwan/"
+  },
+  {
+    "title": "GitHub",
+    "data": "github.com/itsDaniyaL",
+    "link": "https://github.com/itsDaniyaL"
+  }
+]

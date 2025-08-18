@@ -5,11 +5,14 @@ import {
   Menu,
   MenuItem,
   Typography,
+  useTheme,
 } from "@mui/material";
 import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
+import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useState } from "react";
 import { useLocation, useNavigate } from "react-router";
+import { useThemeMode } from "../theme/themeContext";
 
 const menuItems = [
   { label: "Overview", path: "/" },
@@ -20,6 +23,9 @@ const menuItems = [
 
 function TheHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const theme = useTheme();
+  const { mode, toggleTheme } = useThemeMode();
+  const { setPage } = useThemeMode();
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -27,6 +33,13 @@ function TheHeader() {
 
   const handleNavigation = (path: string) => {
     setSelected(path);
+    setPage(
+      path.replace("/", "") as
+        | "contact"
+        | "overview"
+        | "projects"
+        | "experience"
+    );
     navigate(path);
   };
 
@@ -82,33 +95,24 @@ function TheHeader() {
             <MenuIcon className="text-white" />
           </IconButton>
           {menuOpen && (
-            <div className="absolute left-[106px] -translate-x-1/2 mt-2 w-48 bg-[#100E0F] text-[#E6E1E3] rounded-2xl shadow-lg z-50">
-              <MenuItem
-                onClick={() => setMenuOpen(false)}
-                className="hover:bg-gray-700 p-2"
-              >
-                Overview
-              </MenuItem>
-              <MenuItem
-                onClick={() => setMenuOpen(false)}
-                className="hover:bg-gray-700 p-2"
-              >
-                Projects
-              </MenuItem>
-              <MenuItem
-                onClick={() => setMenuOpen(false)}
-                className="hover:bg-gray-700 p-2"
-              >
-                Experience
-              </MenuItem>
-              <MenuItem
-                onClick={() => setMenuOpen(false)}
-                className="hover:bg-gray-700 p-2"
-              >
-                Contact
-              </MenuItem>
+            <div className="absolute left-[95px] -translate-x-1/2 mt-2 w-48 bg-[#100E0F] text-[#E6E1E3] rounded-2xl shadow-lg z-50">
+              {menuItems.map((item) => (
+                <MenuItem
+                  onClick={() => {
+                    handleNavigation(item.path);
+                    setMenuOpen(false);
+                  }}
+                  className="hover:bg-gray-700 p-2"
+                >
+                  {item.label}
+                </MenuItem>
+              ))}
               <div className="flex justify-end m-2">
                 <Button
+                  onClick={() => {
+                    toggleTheme();
+                    setMenuOpen(false);
+                  }}
                   variant="contained"
                   style={{
                     width: "49px",
@@ -116,13 +120,21 @@ function TheHeader() {
                     minWidth: "40px",
                     padding: "10px",
                     borderRadius: "15px",
-                    background: "#1C1B1D",
+                    background: theme.palette.background.paper,
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
                   }}
                 >
-                  <LightModeOutlinedIcon />
+                  {mode === "dark" ? (
+                    <LightModeOutlinedIcon
+                      sx={{ color: theme.palette.text.primary }}
+                    />
+                  ) : (
+                    <DarkModeOutlinedIcon
+                      sx={{ color: theme.palette.text.primary }}
+                    />
+                  )}
                 </Button>
               </div>
             </div>
@@ -142,6 +154,10 @@ function TheHeader() {
       </div>
       <div className="hide-on-mobile">
         <Button
+          onClick={() => {
+            toggleTheme();
+            setMenuOpen(false);
+          }}
           variant="contained"
           style={{
             width: "49px",
@@ -149,13 +165,17 @@ function TheHeader() {
             minWidth: "40px",
             padding: "10px",
             borderRadius: "15px",
-            background: "#100E0F",
+            background: theme.palette.background.paper,
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
           }}
         >
-          <LightModeOutlinedIcon />
+          {mode === "dark" ? (
+            <LightModeOutlinedIcon sx={{ color: theme.palette.text.primary }} />
+          ) : (
+            <DarkModeOutlinedIcon sx={{ color: theme.palette.text.primary }} />
+          )}
         </Button>
       </div>
     </header>

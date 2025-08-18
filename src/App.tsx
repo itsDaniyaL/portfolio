@@ -6,6 +6,8 @@ import { createTheme, ThemeProvider } from "@mui/material";
 import { useMemo, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router";
 import Projects from "./components/projects";
+import Experiences from "./components/experiences";
+import Contact from "./components/contact";
 
 const lightTheme = createTheme({
   palette: {
@@ -46,6 +48,8 @@ export default function App() {
             <Route path="/" element={<Overview />} />
             <Route path="overview" element={<Overview />}></Route>
             <Route path="projects" element={<Projects />}></Route>
+            <Route path="experience" element={<Experiences />}></Route>
+            <Route path="contact" element={<Contact />}></Route>
           </Routes>
         </BrowserRouter>
       </div>

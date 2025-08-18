@@ -3,14 +3,6 @@ import SearchIcon from "@mui/icons-material/Search";
 import EastIcon from "@mui/icons-material/East";
 import { useState } from "react";
 
-const items = [
-  { id: 1, title: "Item 1", bg: "#FF5733" },
-  { id: 2, title: "Item 2", bg: "#33B5FF" },
-  { id: 3, title: "Item 3", bg: "#9B59B6" },
-  { id: 4, title: "Item 4", bg: "#2ECC71" },
-  { id: 5, title: "Item 5", bg: "#FFC300" },
-];
-
 export default function Projects() {
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -33,32 +25,7 @@ export default function Projects() {
 
   return (
     <Box sx={{ display: "flex", flexDirection: "column", flexGrow: 1 }}>
-      <Box
-        sx={{
-          margin: "75px 10px 0 10px",
-          display: "flex",
-          justifyContent: "space-between",
-        }}
-      >
-        <TextField
-          id="outlined-basic"
-          variant="outlined"
-          InputProps={{
-            sx: { borderRadius: "25px" },
-            startAdornment: (
-              <InputAdornment position="start">
-                <SearchIcon />
-              </InputAdornment>
-            ),
-          }}
-        />
-        <p
-          style={{ color: "#E6E1E3", fontSize: "24px", alignContent: "center" }}
-        >
-          10 Projects
-        </p>
-      </Box>
-      <Box sx={{ flexGrow: 1, display: "flex" }}>
+      <Box sx={{ flexGrow: 1, display: "flex", marginTop: "50px" }}>
         {getVisibleBoxes().map((index) => (
           <Box
             key={index}
@@ -160,15 +127,19 @@ export default function Projects() {
                   margin: "20px 20px 20px 10px",
                   alignItems: "center",
                   justifyContent: "center",
+                  padding: "10px",
                 }}
               >
                 <img
                   src={require("../assets/khata-app-1.png")}
                   alt="Khata App"
                   style={{
-                    width: "90%",
-                    height: "90%",
+                    maxWidth: "330px",
+                    maxHeight: "85%",
+                    width: "100%",
+                    height: "auto",
                     objectFit: "contain",
+                    borderRadius: "10px",
                   }}
                 />
               </Box>

@@ -34,7 +34,7 @@ export const overviewThemes = {
     palette: {
       mode: "light",
       primary: { main: "#0F766E" },
-      background: { default: "#ECFDF5", paper: "#D1FAE5" },
+      background: { default: "#F0EFE6", paper: "#FFFFF5" },
       text: { primary: "#064E3B", secondary: "#047857" },
     },
   }),
@@ -42,7 +42,7 @@ export const overviewThemes = {
     palette: {
       mode: "dark",
       primary: { main: "#34D399" },
-      background: { default: "#064E3B", paper: "#022C22" },
+      background: { default: "#141314", paper: "#100E0F" },
       text: { primary: "#D1FAE5", secondary: "#6EE7B7" },
     },
   }),
@@ -53,7 +53,7 @@ export const projectsThemes = {
     palette: {
       mode: "light",
       primary: { main: "#0F766E" },
-      background: { default: "#ECFDF5", paper: "#D1FAE5" },
+      background: { default: "#E1F1E1", paper: "#F0FFF0" },
       text: { primary: "#064E3B", secondary: "#047857" },
     },
   }),
@@ -61,7 +61,7 @@ export const projectsThemes = {
     palette: {
       mode: "dark",
       primary: { main: "#34D399" },
-      background: { default: "#064E3B", paper: "#022C22" },
+      background: { default: "#1D221D", paper: "#0F100C" },
       text: { primary: "#D1FAE5", secondary: "#6EE7B7" },
     },
   }),
@@ -72,7 +72,7 @@ export const experienceThemes = {
     palette: {
       mode: "light",
       primary: { main: "#0F766E" },
-      background: { default: "#ECFDF5", paper: "#D1FAE5" },
+      background: { default: "#DDF7FF", paper: "#121D20" },
       text: { primary: "#064E3B", secondary: "#047857" },
     },
   }),
@@ -80,7 +80,7 @@ export const experienceThemes = {
     palette: {
       mode: "dark",
       primary: { main: "#34D399" },
-      background: { default: "#064E3B", paper: "#022C22" },
+      background: { default: "#1C2B30", paper: "#121D20" },
       text: { primary: "#D1FAE5", secondary: "#6EE7B7" },
     },
   }),
@@ -129,7 +129,7 @@ export const AppThemeProvider = ({
       case "experience":
         return experienceThemes[mode];
       default:
-        return createTheme();
+        return overviewThemes[mode];
     }
   }, [mode, page]);
 

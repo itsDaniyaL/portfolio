@@ -1,23 +1,24 @@
-import { Box, Button, InputAdornment, TextField } from "@mui/material";
-import SearchIcon from "@mui/icons-material/Search";
-import EastIcon from "@mui/icons-material/East";
+import { Box, useMediaQuery, useTheme } from "@mui/material";
 import { useState } from "react";
+import { useExperiences } from "../theme/experiencesContext";
 
 export default function Experiences() {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const theme = useTheme();
+  const { activeIndex, setActiveIndex } = useExperiences();
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
   const boxes = [0, 1, 2];
 
   const getVisibleBoxes = () => {
-    if (boxes.length <= 3) {
-      return boxes;
-    }
-    let start = Math.max(0, activeIndex - 1);
-    let end = start + 3;
+    const visibleCount = isMobile ? 1 : 3;
+    if (boxes.length <= visibleCount) return boxes;
+
+    let start = Math.max(0, activeIndex - Math.floor(visibleCount / 2));
+    let end = start + visibleCount;
 
     if (end > boxes.length) {
       end = boxes.length;
-      start = end - 3;
+      start = end - visibleCount;
     }
 
     return boxes.slice(start, end);

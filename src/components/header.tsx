@@ -13,6 +13,11 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { useState } from "react";
 import { useLocation, useNavigate } from "react-router";
 import { useThemeMode } from "../theme/themeContext";
+import ResumeModal from "./resumeModal";
+import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import { useExperiences } from "../theme/experiencesContext";
+import { useProjects } from "../theme/projectsContext";
 
 const menuItems = [
   { label: "Overview", path: "/" },
@@ -31,15 +36,27 @@ function TheHeader() {
   const location = useLocation();
   const [selected, setSelected] = useState(location.pathname);
 
+  const { prev: expPrev, next: expNext } = useExperiences();
+  const { prev: projPrev, next: projNext } = useProjects();
+
+  const isExperience = location.pathname === "/experience";
+  const isProjects = location.pathname === "/projects";
+
+  const prev = isExperience ? expPrev : isProjects ? projPrev : undefined;
+  const next = isExperience ? expNext : isProjects ? projNext : undefined;
+
   const handleNavigation = (path: string) => {
     setSelected(path);
-    setPage(
-      path.replace("/", "") as
-        | "contact"
-        | "overview"
-        | "projects"
-        | "experience"
-    );
+    const page =
+      path === "/"
+        ? "overview"
+        : (path.replace("/", "") as
+            | "contact"
+            | "overview"
+            | "projects"
+            | "experience");
+
+    setPage(page);
     navigate(path);
   };
 
@@ -63,7 +80,6 @@ function TheHeader() {
           borderRadius: "15px",
           justifyContent: "space-between",
           padding: "5px",
-          marginRight: "5px",
         }}
       >
         <Box className="hidden md:flex space-x-2">
@@ -140,17 +156,53 @@ function TheHeader() {
             </div>
           )}
         </div>
-        <Button
-          variant="contained"
-          style={{
-            textTransform: "none",
-            padding: "0 15px",
-            borderRadius: "12px",
-            background: "#6715B9",
-          }}
-        >
-          Resume
-        </Button>
+        <Box sx={{ display: "flex" }}>
+          {(isExperience || isProjects) && (
+            <Box
+              sx={{
+                backgroundColor: "#1C1B1D",
+                borderRadius: 2,
+                display: "flex",
+                maxWidth: "100px",
+                width: "100px",
+                justifyContent: "space-between",
+                marginRight: "10px",
+              }}
+            >
+              <IconButton
+                onClick={prev}
+                sx={{
+                  backgroundColor: "#3b3a3dff",
+                  borderRadius: 3,
+                  width: "40px",
+                  height: "40px",
+                  "&:hover": {
+                    backgroundColor: "#5a595cff",
+                  },
+                }}
+              >
+                <ArrowBackIosNewIcon sx={{ color: "#E6E1E3" }} />
+              </IconButton>
+
+              <IconButton
+                onClick={next}
+                sx={{
+                  backgroundColor: "#3b3a3dff",
+                  borderRadius: 3,
+                  width: "40px",
+                  height: "40px",
+                  "&:hover": {
+                    backgroundColor: "#5a595cff",
+                  },
+                }}
+              >
+                <ArrowForwardIosIcon sx={{ color: "#E6E1E3" }} />
+              </IconButton>
+            </Box>
+          )}
+
+          <ResumeModal />
+        </Box>
       </div>
       <div className="hide-on-mobile">
         <Button
@@ -169,6 +221,7 @@ function TheHeader() {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
+            marginLeft: "5px",
           }}
         >
           {mode === "dark" ? (

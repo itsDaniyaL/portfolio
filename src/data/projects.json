@@ -1,0 +1,54 @@
+[
+  {
+    "name": "Khata at Home",
+    "icon": "khata_icon.png",
+    "description": "Take control of your Khata, take control of your life.",
+    "readMoreLink": "mailto:daniyal.ahmad.rizwan@hotmail.com",
+    "stack": [
+        "Flutter",
+        "Material UI"
+    ],
+    "images": [
+        "../assets/khata-app-1.png",
+        "../assets/khata-app-2.png",
+        "../assets/khata-app-3.png"
+    ]
+  },
+  {
+    "name": "XiltriX",
+    "icon": "../assets/xiltrix_icon.png",
+    "description": "A cloud-based SaaS platform for real-time lab environment monitoring and sensor data analytics. Built with React, Node.js, Material-UI, and AWS, supporting continuous environmental tracking through smart sensor integrations. Led frontend interface design with a focus on hierarchical data handling, real-time updates, and developer-friendly UX patterns. Developed a custom logging system to track user interactions and feature usage, enhancing operational visibility and platform optimization. Structured the UI for scalability and usability, improving data comprehension and responsiveness for scientific and administrative users.",
+    "readMoreLink": "mailto:daniyal.ahmad.rizwan@hotmail.com",
+    "stack": [
+        "React",
+        "MUI",
+        "Node",
+        "AWS"
+    ],
+    "images": [
+        "../assets/xiltrix-app-1.png",
+        "../assets/xiltrix-app-2.png",
+        "../assets/xiltrix-app-3.png"
+    ]
+  },
+  {
+    "name": "IshowroomPro",
+    "icon": "../assets/ishowroompro_icon.png",
+    "description": "A content management platform powering dynamic digital showrooms across mobile and web. • Developed frontend apps in Vue.js and Ionic, and backend services in Node.js and Eve. • Designed and containerized microservices using Docker, and deployed with Kubernetes for seamless scalability. • Conducted full E2E testing across platforms, ensuring consistent cross-platform functionality for both iOS and Android. • Focused on performance, maintainability, and modular design, enabling faster onboarding and feature rollout for partner teams.",
+    "readMoreLink": "mailto:daniyal.ahmad.rizwan@hotmail.com",
+    "stack": [
+        "Vue",
+        "Vuetify",
+        "Ionic",
+        "Express",
+        "Djandgo",
+        "Docker",
+        "Kubernetes"
+    ],
+    "images": [
+        "../assets/ishowroompro-app-1.png",
+        "../assets/ishowroompro-app-2.png",
+        "../assets/ishowroompro-app-3.png"
+    ]
+  }
+]

@@ -27,14 +27,13 @@ export default function Overview() {
           <p
             style={{
               fontSize: "36px",
-              color: "#E6E1E3",
               fontWeight: "bold",
             }}
             className="font-bold"
           >
             Daniyal Ahmad Rizwan
           </p>
-          <p style={{ color: "#E6E1E3" }}>
+          <p>
             Building innovative web and mobile applications to solve real-world
             problems.
           </p>
@@ -50,7 +49,6 @@ export default function Overview() {
         <p
           style={{
             fontSize: "30px",
-            color: "#E6E1E3",
             fontWeight: "bold",
             margin: "5px 15px",
           }}
@@ -62,6 +60,7 @@ export default function Overview() {
             display: "flex",
             overflowX: "scroll",
             overflowY: "hidden",
+            marginBottom: "10px",
           }}
         >
           <div

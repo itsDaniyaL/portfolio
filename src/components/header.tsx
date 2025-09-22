@@ -24,6 +24,7 @@ const menuItems = [
   { label: "Projects", path: "/projects" },
   { label: "Experience", path: "/experience" },
   { label: "Contact", path: "/contact" },
+  { label: "Privacy & Policy", path: "/privacy-policy" },
 ];
 
 function TheHeader() {

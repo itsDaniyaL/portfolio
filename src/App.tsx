@@ -10,6 +10,7 @@ import Experiences from "./components/experiences";
 import Contact from "./components/contact";
 import { ExperiencesProvider } from "./theme/experiencesContext";
 import { ProjectsProvider } from "./theme/projectsContext";
+import PrivacyPolicy from "./components/privacyPolicy";
 
 const lightTheme = createTheme({
   palette: {
@@ -54,6 +55,10 @@ export default function App() {
                 <Route path="projects" element={<Projects />}></Route>
                 <Route path="experience" element={<Experiences />}></Route>
                 <Route path="contact" element={<Contact />}></Route>
+                <Route
+                  path="privacy-policy"
+                  element={<PrivacyPolicy />}
+                ></Route>
               </Routes>
             </BrowserRouter>
           </div>

@@ -48,7 +48,6 @@ export default function Projects() {
                 cursor: activeIndex === index ? "auto" : "pointer",
               }}
             >
-              {/* Left side (content) */}
               <Box
                 sx={{
                   flex: 1,

@@ -86,6 +86,25 @@ export const experienceThemes = {
   }),
 };
 
+export const privacyThemes = {
+  light: createTheme({
+    palette: {
+      mode: "light",
+      primary: { main: "#0F766E" },
+      background: { default: "#171719", paper: "#121D20" },
+      text: { primary: "#064E3B", secondary: "#047857" },
+    },
+  }),
+  dark: createTheme({
+    palette: {
+      mode: "dark",
+      primary: { main: "#34D399" },
+      background: { default: "#171719", paper: "#121D20" },
+      text: { primary: "#D1FAE5", secondary: "#6EE7B7" },
+    },
+  }),
+};
+
 const ThemeModeContext = createContext({
   mode: "light" as "light" | "dark",
   page: "overview" as Page,
@@ -93,7 +112,12 @@ const ThemeModeContext = createContext({
   setPage: (page: Page) => {},
 });
 
-type Page = "contact" | "overview" | "projects" | "experience";
+type Page =
+  | "contact"
+  | "overview"
+  | "projects"
+  | "experience"
+  | "privacy-policy";
 
 export const useThemeMode = () => useContext(ThemeModeContext);
 
@@ -128,6 +152,8 @@ export const AppThemeProvider = ({
         return projectsThemes[mode];
       case "experience":
         return experienceThemes[mode];
+      case "privacy-policy":
+        return privacyThemes[mode];
       default:
         return overviewThemes[mode];
     }

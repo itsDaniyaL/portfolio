@@ -1,0 +1,16 @@
+.swiper-pagination-bullet {
+  width: 14px;
+  height: 14px;
+  background: #1d1d1f; /* dark bullet color */
+  opacity: 1;
+  border-radius: 50px;
+  margin: 0 6px !important;
+  transition: all 0.3s ease;
+}
+
+/* Active bullet */
+.swiper-pagination-bullet-active {
+  width: 50px; /* elongated pill */
+  background: #1d1d1f; /* keep same color */
+  border-radius: 50px;
+}

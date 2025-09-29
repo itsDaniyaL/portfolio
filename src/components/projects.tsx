@@ -2,6 +2,9 @@ import { Box, Button, useMediaQuery, useTheme } from "@mui/material";
 import EastIcon from "@mui/icons-material/East";
 import { useProjects } from "../theme/projectsContext";
 import projectsData from "../data/projects.json";
+import "./swiperCustom.css";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Navigation, Autoplay } from "swiper/modules";
 
 export default function Projects() {
   const theme = useTheme();
@@ -68,9 +71,9 @@ export default function Projects() {
                   <Box>
                     <Box sx={{ display: "flex" }}>
                       <img
-                        src={`/assets/${project.icon}`}
-                        alt={`${project.name} icon`}
-                        style={{ height: "50px" }}
+                        src={`${project.icon}`}
+                        alt={project.name}
+                        style={{ height: "50px", width: "50px" }}
                       />
                       <h1
                         style={{
@@ -90,7 +93,7 @@ export default function Projects() {
                       </h1>
                     ) : null}
                   </Box>
-                  {activeIndex === index ? (
+                  {/* {activeIndex === index ? (
                     <Box>
                       <Button
                         href={project.readMoreLink}
@@ -124,7 +127,7 @@ export default function Projects() {
                         </p>
                       </Button>
                     </Box>
-                  ) : null}
+                  ) : null} */}
                 </Box>
               </Box>
 
@@ -142,7 +145,7 @@ export default function Projects() {
                   }}
                 >
                   <img
-                    src={project.images[0]}
+                    src={project.images[2]}
                     alt={project.name}
                     style={{
                       maxWidth: "330px",

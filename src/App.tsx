@@ -46,7 +46,7 @@ export default function App() {
     <ExperiencesProvider>
       <ProjectsProvider>
         <ThemeProvider theme={theme} defaultMode="system">
-          <div className="main-page">
+          <div className="main-page h-screen  flex flex-col">
             <BrowserRouter>
               <TheHeader />
               <Routes>

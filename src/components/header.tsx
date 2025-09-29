@@ -13,7 +13,6 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { useState } from "react";
 import { useLocation, useNavigate } from "react-router";
 import { useThemeMode } from "../theme/themeContext";
-import ResumeModal from "./resumeModal";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import { useExperiences } from "../theme/experiencesContext";
@@ -201,8 +200,18 @@ function TheHeader() {
               </IconButton>
             </Box>
           )}
-
-          <ResumeModal />
+          {/* <Button
+        variant="contained"
+        onClick={handleOpen}
+        style={{
+          textTransform: "none",
+          padding: "0 15px",
+          borderRadius: "12px",
+          background: "#6715B9",
+        }}
+      >
+        Resume
+      </Button> */}
         </Box>
       </div>
       <div className="hide-on-mobile">

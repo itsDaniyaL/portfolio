@@ -1,15 +1,21 @@
-import { Box, Button, useMediaQuery, useTheme } from "@mui/material";
-import EastIcon from "@mui/icons-material/East";
+import { Box, Button, Chip, useMediaQuery, useTheme } from "@mui/material";
 import { useProjects } from "../theme/projectsContext";
 import projectsData from "../data/projects.json";
 import "./swiperCustom.css";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Navigation, Autoplay } from "swiper/modules";
+import { useEffect } from "react";
+import { useThemeMode } from "../theme/themeContext";
+import OpenInNewIcon from "@mui/icons-material/OpenInNew";
+import GitHubIcon from "@mui/icons-material/GitHub";
 
 export default function Projects() {
   const theme = useTheme();
   const { activeIndex, setActiveIndex } = useProjects();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+  const { setPage } = useThemeMode();
+
+  useEffect(() => {
+    setPage("projects");
+  }, [setPage]);
 
   const boxes = projectsData.map((_, i) => i);
 
@@ -33,31 +39,34 @@ export default function Projects() {
       <Box sx={{ flexGrow: 1, display: "flex", marginTop: "50px" }}>
         {getVisibleBoxes().map((index) => {
           const project = projectsData[index];
+          const isActive = activeIndex === index;
+          const hasImage = project.images && project.images.length > 0;
 
           return (
             <Box
               key={index}
-              {...(activeIndex !== index && {
-                onClick: () => setActiveIndex(index),
-              })}
+              {...(!isActive && { onClick: () => setActiveIndex(index) })}
               sx={{
-                flex: activeIndex === index ? 4 : 1,
+                flex: isActive ? 4 : 1,
                 transition: "flex 0.4s ease",
-                minWidth: activeIndex === index ? "auto" : "150px",
+                minWidth: isActive ? "auto" : "150px",
                 margin: "10px",
-                background: "#384739",
+                background: theme.palette.background.paper,
                 borderRadius: "25px",
                 display: "flex",
-                cursor: activeIndex === index ? "auto" : "pointer",
+                overflow: "hidden",
+                cursor: isActive ? "auto" : "pointer",
               }}
             >
               <Box
                 sx={{
                   flex: 1,
+                  minWidth: 0,
                   display: "flex",
                   flexDirection: "column",
                   borderRadius: "15px",
                   margin: "20px",
+                  overflow: "hidden",
                 }}
               >
                 <Box
@@ -66,77 +75,146 @@ export default function Projects() {
                     flexDirection: "column",
                     justifyContent: "space-between",
                     height: "100%",
+                    overflow: "hidden",
                   }}
                 >
-                  <Box>
-                    <Box sx={{ display: "flex" }}>
-                      <img
-                        src={`${project.icon}`}
-                        alt={project.name}
-                        style={{ height: "50px", width: "50px" }}
-                      />
+                  <Box sx={{ minWidth: 0, overflow: "hidden", display: "flex", flexDirection: "column", flex: 1 }}>
+                    <Box sx={{ display: "flex", alignItems: "center", minWidth: 0 }}>
+                      {project.icon ? (
+                        <img
+                          src={`${process.env.PUBLIC_URL}${project.icon}`}
+                          alt={project.name}
+                          style={{ height: "50px", width: "50px", flexShrink: 0, borderRadius: "12px", objectFit: "cover" }}
+                        />
+                      ) : (
+                        <Box
+                          sx={{
+                            height: "50px",
+                            width: "50px",
+                            flexShrink: 0,
+                            borderRadius: "12px",
+                            backgroundColor: theme.palette.primary.main,
+                            color: "#fff",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            fontSize: "22px",
+                            fontWeight: "bold",
+                          }}
+                        >
+                          {project.name.charAt(0)}
+                        </Box>
+                      )}
                       <h1
                         style={{
                           fontSize: "18px",
-                          color: "#E6E1E3",
+                          color: theme.palette.text.primary,
                           marginLeft: "20px",
                           fontWeight: "bold",
-                          alignContent: "center",
+                          overflow: "hidden",
+                          textOverflow: "ellipsis",
+                          whiteSpace: "nowrap",
+                          minWidth: 0,
                         }}
                       >
                         {project.name}
                       </h1>
                     </Box>
-                    {activeIndex === index ? (
-                      <h1 style={{ color: "#E6E1E3", margin: "20px 0" }}>
-                        {project.description}
-                      </h1>
-                    ) : null}
-                  </Box>
-                  {/* {activeIndex === index ? (
-                    <Box>
-                      <Button
-                        href={project.readMoreLink}
-                        target="_blank"
-                        variant="contained"
-                        sx={{
-                          background: "#1D221D",
-                          width: "150px",
-                          height: "50px",
-                          borderRadius: "15px",
-                          display: "flex",
-                          flexDirection: "column",
-                          textTransform: "none",
-                          alignItems: "flex-start",
+
+                    {/* Tagline + meta — shown on collapsed cards so each one is self-explanatory */}
+                    {!isActive && (
+                      <p
+                        style={{
+                          color: theme.palette.text.secondary,
+                          marginTop: "12px",
+                          fontSize: "13px",
+                          lineHeight: 1.5,
+                          display: "-webkit-box",
+                          WebkitLineClamp: 3,
+                          WebkitBoxOrient: "vertical",
+                          overflow: "hidden",
                         }}
                       >
-                        <Box sx={{ display: "flex" }}>
-                          <p
-                            style={{
-                              fontSize: "10px",
-                              marginRight: "5px",
-                              color: "#E6E1E3",
-                            }}
-                          >
-                            Read more
-                          </p>
-                          <EastIcon sx={{ fontSize: "15px" }} />
-                        </Box>
-                        <p style={{ color: "#E6E1E3", fontWeight: "bold" }}>
-                          Project Details
+                        {project.tagline}
+                      </p>
+                    )}
+
+                    {isActive && (
+                      <Box sx={{ overflow: "auto", flex: 1, mt: "4px" }}>
+                        <p style={{ color: theme.palette.primary.main, margin: "10px 0 0", fontSize: "13px", fontWeight: 600 }}>
+                          {project.role} · {project.year}
                         </p>
-                      </Button>
+                        <p style={{ color: theme.palette.text.primary, margin: "12px 0", lineHeight: 1.7, fontSize: "15px", whiteSpace: "pre-line" }}>
+                          {project.description}
+                        </p>
+
+                        {project.stack && project.stack.length > 0 && (
+                          <Box sx={{ display: "flex", flexWrap: "wrap", gap: "8px", mt: 1 }}>
+                            {project.stack.map((tech) => (
+                              <Chip
+                                key={tech}
+                                label={tech}
+                                size="small"
+                                sx={{
+                                  backgroundColor: theme.palette.background.default,
+                                  color: theme.palette.text.secondary,
+                                  fontSize: "12px",
+                                  textTransform: "capitalize",
+                                }}
+                              />
+                            ))}
+                          </Box>
+                        )}
+                      </Box>
+                    )}
+                  </Box>
+
+                  {isActive && (project.liveUrl || project.githubUrl) && (
+                    <Box sx={{ display: "flex", gap: "12px", flexShrink: 0, pt: "16px" }}>
+                      {project.liveUrl && (
+                        <Button
+                          href={project.liveUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          variant="contained"
+                          startIcon={<OpenInNewIcon />}
+                          sx={{
+                            background: theme.palette.primary.main,
+                            borderRadius: "12px",
+                            textTransform: "none",
+                          }}
+                        >
+                          Live
+                        </Button>
+                      )}
+                      {project.githubUrl && (
+                        <Button
+                          href={project.githubUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          variant="outlined"
+                          startIcon={<GitHubIcon />}
+                          sx={{
+                            borderColor: theme.palette.text.secondary,
+                            color: theme.palette.text.primary,
+                            borderRadius: "12px",
+                            textTransform: "none",
+                          }}
+                        >
+                          Code
+                        </Button>
+                      )}
                     </Box>
-                  ) : null} */}
+                  )}
                 </Box>
               </Box>
 
-              {activeIndex === index ? (
+              {isActive && hasImage && (
                 <Box
                   sx={{
                     flex: 1,
                     display: "flex",
-                    background: "#1D221D",
+                    background: theme.palette.background.default,
                     borderRadius: "15px",
                     margin: "20px 20px 20px 10px",
                     alignItems: "center",
@@ -145,7 +223,7 @@ export default function Projects() {
                   }}
                 >
                   <img
-                    src={project.images[2]}
+                    src={`${process.env.PUBLIC_URL}${project.images[0]}`}
                     alt={project.name}
                     style={{
                       maxWidth: "330px",
@@ -157,7 +235,7 @@ export default function Projects() {
                     }}
                   />
                 </Box>
-              ) : null}
+              )}
             </Box>
           );
         })}

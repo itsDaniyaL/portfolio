@@ -1,0 +1,42 @@
+[
+  {
+    "company": "Stackfinity",
+    "position": "Senior Frontend Software Engineer",
+    "location": "Remote",
+    "startDate": "Oct 2024",
+    "endDate": "Present",
+    "tagline": "Cross-platform mobile apps in React Native & Flutter across language learning, healthcare, and transport.",
+    "description": "• Built cross-platform mobile apps in React Native and Flutter across language learning, healthcare, and transportation.\n• Designed scalable, reusable UI components leveraging Material UI principles and mobile design systems.\n• Integrated frontends with RESTful APIs and PostgreSQL backends for smooth data handling and reliable performance.\n• Drove performance optimizations (lazy loading, efficient state management with Redux/Provider), reducing load times and improving responsiveness.\n• Implemented secure flows including Stripe payments, OTP verification, and encrypted real-time messaging.\n• Released apps to the Apple App Store and Google Play, ensuring compliance with platform standards.\n• Applied analytics insights to resolve UX pain points, driving measurable engagement gains.",
+    "stack": ["reactnative", "flutter", "typescript", "redux", "stripe", "postgresql", "firebase"]
+  },
+  {
+    "company": "Devsinc",
+    "position": "Software Engineer",
+    "location": "Lahore, Pakistan",
+    "startDate": "Nov 2022",
+    "endDate": "Sep 2024",
+    "tagline": "Scalable web & mobile apps with React, React Native, and Node.js — including the BeautyPass lifestyle app.",
+    "description": "• Built scalable web and mobile apps using React Native, React, and Node.js — achieving a 40% performance boost and 30% engagement increase.\n• Developed state-managed UI (Redux, Zustand) for maintainable, testable, scalable codebases.\n• Implemented server-side rendering (SSR) and SEO optimizations for web platforms.\n• Collaborated in Agile teams, integrating .NET APIs with cross-platform UIs at 95% on-time delivery.\n• Set up Dockerized environments and CI/CD pipelines with Jenkins, streamlining deployments.\n• Worked from Figma handoffs, adhering to brand and accessibility standards.\n• Contributed to BeautyPass, a high-profile lifestyle app, delivering React Native features for the influencer and fashion industry.",
+    "stack": ["react", "reactnative", "node", "redux", "docker", "jenkins", "figma"]
+  },
+  {
+    "company": "ACE Internationals",
+    "position": "Frontend Developer & Quality Assurance",
+    "location": "Lahore, Pakistan",
+    "startDate": "Nov 2021",
+    "endDate": "Nov 2022",
+    "tagline": "Responsive React apps backed by automated Cypress test suites and performance audits.",
+    "description": "• Built and tested responsive React applications, ensuring accessibility and cross-device compatibility.\n• Developed automated test suites (Cypress), reducing manual QA by 50% and increasing release confidence.\n• Conducted usability testing and performance audits, improving UI responsiveness by up to 60%.\n• Accelerated release cycles with end-to-end and regression testing pipelines, cutting QA overhead by 40%.",
+    "stack": ["react", "cypress", "lighthouse", "javascript"]
+  },
+  {
+    "company": "Stackfinity",
+    "position": "Software Engineer",
+    "location": "Lahore, Pakistan",
+    "startDate": "Oct 2020",
+    "endDate": "Sep 2021",
+    "tagline": "Mobile-first React Native & Flutter apps with offline-first architecture and optimized state management.",
+    "description": "• Developed React Native and Flutter apps for mobile-first projects, improving UX by 35% with responsive, consistent design systems.\n• Refactored and modularized UI components, reducing bundle size by 50% and improving maintainability.\n• Integrated REST & GraphQL APIs with optimized state management (Redux, React Query, Provider), reducing latency by 20%.\n• Built offline-first features in React Native, ensuring uninterrupted access to critical data in low-connectivity scenarios.",
+    "stack": ["reactnative", "flutter", "graphql", "redux", "reactquery"]
+  }
+]

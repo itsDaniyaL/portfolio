@@ -1,0 +1,43 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ── queries collection ───────────────────────────────────────────────────
+    // Visitors can submit a contact query.
+    // The write is always part of a batch that also updates deviceLimits,
+    // so we use getAfter() to verify the final counter is ≤ 5.
+    match /queries/{queryId} {
+      allow read: if false; // no client-side reads
+      allow create: if
+        // required fields must be present
+        request.resource.data.keys().hasAll(['deviceId', 'name', 'email', 'message', 'createdAt']) &&
+        // message can't be blank or too long
+        request.resource.data.message is string &&
+        request.resource.data.message.size() > 0 &&
+        request.resource.data.message.size() <= 2000 &&
+        // name and email basic checks
+        request.resource.data.name is string &&
+        request.resource.data.name.size() > 0 &&
+        request.resource.data.email is string &&
+        request.resource.data.email.size() > 0 &&
+        // after the batch commits, the device's count must be ≤ 5
+        getAfter(/databases/$(database)/documents/deviceLimits/$(request.resource.data.deviceId)).data.count <= 5;
+    }
+
+    // ── deviceLimits collection ──────────────────────────────────────────────
+    // Tracks how many queries each device has submitted.
+    // Key is the deviceId (UUID stored in localStorage on the client).
+    match /deviceLimits/{deviceId} {
+      allow read: if true; // clients need to read their own count
+      // First submission: create with count = 1
+      allow create: if
+        request.resource.data.count == 1 &&
+        request.resource.data.keys().hasOnly(['count']);
+      // Subsequent submissions: only increment by 1, hard cap at 5
+      allow update: if
+        resource.data.count < 5 &&
+        request.resource.data.count == resource.data.count + 1 &&
+        request.resource.data.keys().hasOnly(['count']);
+    }
+  }
+}

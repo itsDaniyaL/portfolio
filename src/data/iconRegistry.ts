@@ -1,0 +1,86 @@
+import {
+  siReact,
+  siFlutter,
+  siFirebase,
+  siNodedotjs,
+  siVuedotjs,
+  siVuetify,
+  siMongodb,
+  siPython,
+  siIonic,
+  siCypress,
+  siLighthouse,
+  siMysql,
+  siMariadb,
+  siPostgresql,
+  siSqlite,
+  siAndroid,
+  siTypescript,
+  siJavascript,
+  siRedux,
+  siDocker,
+  siStripe,
+  siGraphql,
+  siExpo,
+  siNextdotjs,
+  siExpress,
+  siNestjs,
+  siReactquery,
+  siJenkins,
+  siFigma,
+  siMui,
+  siSwift,
+  siKotlin,
+} from "simple-icons";
+
+export type Brand = { title: string; hex: string; path: string };
+
+// Maps a lowercase stack key → a simple-icons brand object.
+// Add aliases freely (e.g. "reactnative" reuses the React mark).
+const REGISTRY: Record<string, Brand> = {
+  react: siReact as Brand,
+  reactnative: { ...(siReact as Brand), title: "React Native" },
+  flutter: siFlutter as Brand,
+  firebase: siFirebase as Brand,
+  node: siNodedotjs as Brand,
+  nodejs: siNodedotjs as Brand,
+  vue: siVuedotjs as Brand,
+  vuetify: siVuetify as Brand,
+  mongodb: siMongodb as Brand,
+  mongo: siMongodb as Brand,
+  python: siPython as Brand,
+  ionic: siIonic as Brand,
+  cypress: siCypress as Brand,
+  lighthouse: siLighthouse as Brand,
+  mysql: siMysql as Brand,
+  mariadb: siMariadb as Brand,
+  postgresql: siPostgresql as Brand,
+  postgres: siPostgresql as Brand,
+  sqlite: siSqlite as Brand,
+  android: siAndroid as Brand,
+  typescript: siTypescript as Brand,
+  javascript: siJavascript as Brand,
+  redux: siRedux as Brand,
+  docker: siDocker as Brand,
+  stripe: siStripe as Brand,
+  graphql: siGraphql as Brand,
+  expo: siExpo as Brand,
+  next: siNextdotjs as Brand,
+  nextjs: siNextdotjs as Brand,
+  express: siExpress as Brand,
+  nestjs: siNestjs as Brand,
+  reactquery: siReactquery as Brand,
+  jenkins: siJenkins as Brand,
+  figma: siFigma as Brand,
+  mui: siMui as Brand,
+  materialui: siMui as Brand,
+  swift: siSwift as Brand,
+  kotlin: siKotlin as Brand,
+};
+
+/** Resolve a list of stack keys to brand icons, skipping any unknown keys. */
+export function brandsFor(keys: string[]): Brand[] {
+  return keys
+    .map((k) => REGISTRY[k.toLowerCase().replace(/[.\s-]/g, "")])
+    .filter((b): b is Brand => Boolean(b));
+}

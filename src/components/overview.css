@@ -14,3 +14,10 @@
   width: 100%;
   box-sizing: border-box;
 } */
+
+.contact-line {
+  transition: color 0.2s ease;
+}
+.contact-line:hover {
+  text-decoration: underline;
+}

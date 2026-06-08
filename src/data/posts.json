@@ -1,0 +1,74 @@
+[
+  {
+    "platform": "appstore",
+    "title": "Noor · Soul Tracker is live on the App Store",
+    "excerpt": "A privacy-first spiritual wellness app that blends prayers, Quran, Zikar, and Sadaqa into a single daily soul score — with full Apple Watch support. Built for iOS and Android.",
+    "url": "https://apps.apple.com/pk/app/noor-soul-tracker/id6767209251",
+    "date": "2026-04-20",
+    "likes": 0
+  },
+  {
+    "platform": "appstore",
+    "title": "Shipped Snap Cards Match across Apple Watch, iPhone, iPad & Mac",
+    "excerpt": "A fast-paced memory game with multiple modes, themes, Game Center leaderboards, and a streamlined Apple Watch build using the Digital Crown.",
+    "url": "https://apps.apple.com/pk/app/snap-cards-match/id6761582766",
+    "date": "2026-02-15",
+    "likes": 0
+  },
+  {
+    "platform": "projects",
+    "title": "Streak Bubble — habits with real accountability",
+    "excerpt": "A Flutter habit tracker that pairs streak-building with accountability friends, streak recovery, group challenges, and Apple Watch support.",
+    "url": "https://itsdaniyal.github.io/portfolio/#/projects",
+    "date": "2026-01-10",
+    "likes": 0
+  },
+  {
+    "platform": "appstore",
+    "title": "Sentential is live — learn a language by making sentences",
+    "excerpt": "A Flutter app that teaches the heart of any language: building correct, natural-sounding sentences, with no-signup onboarding and progress quizzes.",
+    "url": "https://apps.apple.com/pk/app/sentential/id6738532992",
+    "date": "2025-11-12",
+    "likes": 0
+  },
+  {
+    "platform": "projects",
+    "title": "TrackZone — smart-bin field app for waste & recycling",
+    "excerpt": "A Flutter app with real-time bin monitoring, HERE Maps navigation, and incident reporting. Built for operations in Belgium, expanding across Europe.",
+    "url": "https://itsdaniyal.github.io/portfolio/#/projects",
+    "date": "2025-09-05",
+    "likes": 0
+  },
+  {
+    "platform": "projects",
+    "title": "Oye Cab — book a taxi up to a week in advance",
+    "excerpt": "A Flutter taxi-booking app with advance reservations, fixed fares, real-time tracking, and multiple secure payment options.",
+    "url": "https://itsdaniyal.github.io/portfolio/#/projects",
+    "date": "2025-07-01",
+    "likes": 0
+  },
+  {
+    "platform": "appstore",
+    "title": "TwoDos — private, shared to-dos for two",
+    "excerpt": "A minimalist Flutter productivity app for the Mac with shared lists, real-time sync, and a deliberately distraction-free interface. Always free.",
+    "url": "https://apps.apple.com/pk/app/twodos-collaborative-todos/id6469541755",
+    "date": "2024-11-20",
+    "likes": 0
+  },
+  {
+    "platform": "projects",
+    "title": "XiltriX — real-time lab monitoring SaaS",
+    "excerpt": "Led the frontend for a cloud platform handling hierarchical sensor data and real-time updates, built with React, Node.js, MUI, and AWS.",
+    "url": "https://itsdaniyal.github.io/portfolio/#/projects",
+    "date": "2024-05-10",
+    "likes": 0
+  },
+  {
+    "platform": "linkedin",
+    "title": "Let's connect on LinkedIn",
+    "excerpt": "I share what I'm building across React, React Native, Flutter, and full-stack work. Open to collaborating on impactful products.",
+    "url": "https://www.linkedin.com/in/daniyal-ahmad-rizwan/",
+    "date": "2024-03-01",
+    "likes": 0
+  }
+]

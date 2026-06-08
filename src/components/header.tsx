@@ -2,11 +2,12 @@ import {
   Box,
   Button,
   IconButton,
-  Menu,
   MenuItem,
   Typography,
   useTheme,
 } from "@mui/material";
+import { motion } from "framer-motion";
+import { alpha } from "@mui/material/styles";
 import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -22,15 +23,13 @@ const menuItems = [
   { label: "Overview", path: "/" },
   { label: "Projects", path: "/projects" },
   { label: "Experience", path: "/experience" },
-  { label: "Contact", path: "/contact" },
   { label: "Privacy & Policy", path: "/privacy-policy" },
 ];
 
 function TheHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
   const theme = useTheme();
-  const { mode, toggleTheme } = useThemeMode();
-  const { setPage } = useThemeMode();
+  const { mode, toggleTheme, setPage } = useThemeMode();
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -54,17 +53,18 @@ function TheHeader() {
             | "contact"
             | "overview"
             | "projects"
-            | "experience");
+            | "experience"
+            | "privacy-policy");
 
     setPage(page);
     navigate(path);
   };
 
-  const handleToggle = () => {
-    setMenuOpen((prev) => !prev);
-  };
   return (
-    <header
+    <motion.header
+      initial={{ opacity: 0, y: -14 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
       style={{
         display: "flex",
         margin: "5px 10px",
@@ -76,12 +76,14 @@ function TheHeader() {
         style={{
           flexGrow: 1,
           display: "flex",
-          background: "#100E0F",
+          background: theme.palette.background.paper,
           borderRadius: "15px",
           justifyContent: "space-between",
           padding: "5px",
+          transition: "background 0.3s ease",
         }}
       >
+        {/* Desktop nav */}
         <Box className="hidden md:flex space-x-2">
           {menuItems.map((item) => (
             <Box
@@ -93,32 +95,50 @@ function TheHeader() {
                 borderRadius: "8px",
                 cursor: "pointer",
                 backgroundColor:
-                  selected === item.path ? "#1C1B1D" : "transparent",
+                  selected === item.path
+                    ? alpha(theme.palette.text.primary, 0.15)
+                    : "transparent",
                 "&:hover": {
-                  backgroundColor: "#2C2B2D",
+                  backgroundColor: alpha(theme.palette.text.primary, 0.08),
                 },
+                transition: "background-color 0.2s ease",
               }}
             >
-              <Typography sx={{ color: "#E6E1E3", m: 0, px: 2 }}>
+              <Typography
+                sx={{ color: theme.palette.text.primary, m: 0, px: 2 }}
+              >
                 {item.label}
               </Typography>
             </Box>
           ))}
         </Box>
 
+        {/* Mobile hamburger + dropdown */}
         <div className="md:hidden">
           <IconButton onClick={() => setMenuOpen(!menuOpen)}>
-            <MenuIcon className="text-white" />
+            <MenuIcon sx={{ color: theme.palette.text.primary }} />
           </IconButton>
           {menuOpen && (
-            <div className="absolute left-[95px] -translate-x-1/2 mt-2 w-48 bg-[#100E0F] text-[#E6E1E3] rounded-2xl shadow-lg z-50">
+            <div
+              className="absolute left-[95px] -translate-x-1/2 mt-2 w-48 rounded-2xl shadow-lg z-50"
+              style={{
+                background: theme.palette.background.paper,
+                color: theme.palette.text.primary,
+              }}
+            >
               {menuItems.map((item) => (
                 <MenuItem
+                  key={item.path}
                   onClick={() => {
                     handleNavigation(item.path);
                     setMenuOpen(false);
                   }}
-                  className="hover:bg-gray-700 p-2"
+                  sx={{
+                    color: theme.palette.text.primary,
+                    "&:hover": {
+                      backgroundColor: alpha(theme.palette.text.primary, 0.08),
+                    },
+                  }}
                 >
                   {item.label}
                 </MenuItem>
@@ -136,7 +156,7 @@ function TheHeader() {
                     minWidth: "40px",
                     padding: "10px",
                     borderRadius: "15px",
-                    background: theme.palette.background.paper,
+                    background: theme.palette.background.default,
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
@@ -156,11 +176,13 @@ function TheHeader() {
             </div>
           )}
         </div>
+
+        {/* Prev/Next arrows for projects and experience */}
         <Box sx={{ display: "flex" }}>
           {(isExperience || isProjects) && (
             <Box
               sx={{
-                backgroundColor: "#1C1B1D",
+                backgroundColor: alpha(theme.palette.text.primary, 0.1),
                 borderRadius: 2,
                 display: "flex",
                 maxWidth: "100px",
@@ -172,48 +194,42 @@ function TheHeader() {
               <IconButton
                 onClick={prev}
                 sx={{
-                  backgroundColor: "#3b3a3dff",
+                  backgroundColor: alpha(theme.palette.text.primary, 0.15),
                   borderRadius: 3,
                   width: "40px",
                   height: "40px",
                   "&:hover": {
-                    backgroundColor: "#5a595cff",
+                    backgroundColor: alpha(theme.palette.text.primary, 0.3),
                   },
                 }}
               >
-                <ArrowBackIosNewIcon sx={{ color: "#E6E1E3" }} />
+                <ArrowBackIosNewIcon
+                  sx={{ color: theme.palette.text.primary }}
+                />
               </IconButton>
 
               <IconButton
                 onClick={next}
                 sx={{
-                  backgroundColor: "#3b3a3dff",
+                  backgroundColor: alpha(theme.palette.text.primary, 0.15),
                   borderRadius: 3,
                   width: "40px",
                   height: "40px",
                   "&:hover": {
-                    backgroundColor: "#5a595cff",
+                    backgroundColor: alpha(theme.palette.text.primary, 0.3),
                   },
                 }}
               >
-                <ArrowForwardIosIcon sx={{ color: "#E6E1E3" }} />
+                <ArrowForwardIosIcon
+                  sx={{ color: theme.palette.text.primary }}
+                />
               </IconButton>
             </Box>
           )}
-          {/* <Button
-        variant="contained"
-        onClick={handleOpen}
-        style={{
-          textTransform: "none",
-          padding: "0 15px",
-          borderRadius: "12px",
-          background: "#6715B9",
-        }}
-      >
-        Resume
-      </Button> */}
         </Box>
       </div>
+
+      {/* Theme toggle button (desktop) */}
       <div className="hide-on-mobile">
         <Button
           onClick={() => {
@@ -227,11 +243,12 @@ function TheHeader() {
             minWidth: "40px",
             padding: "10px",
             borderRadius: "15px",
-            background: theme.palette.background.paper,
+            background: theme.palette.background.default,
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
             marginLeft: "5px",
+            transition: "background 0.3s ease",
           }}
         >
           {mode === "dark" ? (
@@ -241,7 +258,7 @@ function TheHeader() {
           )}
         </Button>
       </div>
-    </header>
+    </motion.header>
   );
 }
 

@@ -1,54 +1,158 @@
 [
   {
+    "name": "Snap Cards Match",
+    "icon": "/assets/snap-card-icon.png",
+    "tagline": "A fast-paced card-matching game across Apple Watch, iPhone, iPad, and Mac.",
+    "description": "A cross-platform memory game where players flip cards, find matching pairs, and chase their best score — with a tailored experience on every Apple device.\n\n• Multiple game modes — Classic, Time Attack, Sudden Death, and Zen — across five difficulty levels.\n• Six symbol themes plus seasonal themes that activate automatically, with customizable card backs.\n• A streamlined Apple Watch build with Digital Crown navigation and haptic feedback on every flip and match.\n• Quality-of-life touches: hints, undo, and an optional countdown timer.\n• Game Center leaderboards, a bonus-point streak system, and Family Sharing support.",
+    "stack": ["swift", "kotlin"],
+    "year": "2025",
+    "role": "iOS & Android Developer",
+    "liveUrl": "https://apps.apple.com/pk/app/snap-cards-match/id6761582766",
+    "githubUrl": "",
+    "images": []
+  },
+  {
+    "name": "Streak Bubble",
+    "icon": "/assets/streak_bubble.png",
+    "tagline": "Turn your goals into streaks you actually want to keep — with friends who hold you to it.",
+    "description": "A Flutter habit-tracking app that pairs streak-building with real social accountability, so momentum comes from both progress and the friends watching your back.\n\n• Flexible goals — daily, weekly, custom, and location-based habits completed with a single tap.\n• Accountability friends who get notified when you miss, plus a workout buddy to verify completions.\n• Streak recovery to bounce back from a missed day instead of losing the whole chain.\n• A Streak Album, social feed, group challenges, and milestone celebrations (3 to 365 days).\n• Apple Watch support, private goals, and a Plus tier unlocking unlimited friends, instant recovery, and exclusive Watch features.",
+    "stack": ["flutter", "firebase"],
+    "year": "2025",
+    "role": "Flutter Developer",
+    "liveUrl": "",
+    "githubUrl": "",
+    "images": []
+  },
+  {
+    "name": "Sentential",
+    "icon": "/assets/sentential.png",
+    "tagline": "Learn a language by mastering the part that matters most — making sentences.",
+    "description": "A Flutter language-learning app that goes beyond memorizing words and phrases to teach the heart of any language: building correct, natural-sounding sentences.\n\n• Sentence-first learning that grounds grammar and structure in real, usable sentences.\n• A frictionless start — a simple UI with no signup, so learners can dive in immediately.\n• Beginner-friendly reading content that scales up to more complex structures at the learner's own pace.\n• Quizzes that reinforce each concept and surface progress in real time.\n• Designed to take learners from first words to confident, everyday conversation.",
+    "stack": ["flutter"],
+    "year": "2024",
+    "role": "Flutter Developer",
+    "liveUrl": "https://apps.apple.com/pk/app/sentential/id6738532992",
+    "githubUrl": "",
+    "images": []
+  },
+  {
+    "name": "Oye Cab",
+    "icon": "/assets/Oye_Icon.png",
+    "tagline": "A taxi-booking app that lets you reserve rides up to a week in advance.",
+    "description": "A Flutter taxi-booking app built to make travel planning seamless and stress-free, letting riders lock in a dependable ride days ahead or hail one on the spot.\n\n• Advance booking — reserve rides up to seven days ahead for guaranteed availability.\n• Fixed-fare pricing with no surge, so the price you see is the price you pay.\n• A clean, mobile-first UI that gets riders booked in just a few taps.\n• Real-time tracking of the assigned taxi from booking through to drop-off.\n• Multiple secure payment options for fast, flexible checkout.",
+    "stack": ["flutter", "firebase"],
+    "year": "2024",
+    "role": "Flutter Developer",
+    "liveUrl": "",
+    "githubUrl": "",
+    "images": []
+  },
+  {
+    "name": "TrackZone — Smart Ends",
+    "icon": "/assets/trackzone_icons.png",
+    "tagline": "Smart-bin sensors and camera AI for the waste and recycling industry.",
+    "description": "A Flutter field app for the smart waste and recycling industry, putting real-time bin intelligence and incident reporting in the hands of collection crews. Built for operations in Belgium and expanding across Europe.\n\n• Real-time bin monitoring of exact locations and fill levels, helping crews plan efficient routes and prevent overflow.\n• Turn-by-turn navigation to any bin via integrated HERE Maps SDK, optimizing collection routes and saving time.\n• On-the-spot incident reporting with photos, GPS, and time stamps sent straight to the back office for fast resolution.\n• Smart-bin sensor and camera-AI integration for contamination detection and ESG reporting.\n• Designed to make field technicians and waste-collection staff measurably more efficient on every route.",
+    "stack": ["flutter", "firebase"],
+    "year": "2024",
+    "role": "Flutter Developer",
+    "liveUrl": "",
+    "githubUrl": "",
+    "images": []
+  },
+  {
+    "name": "TwoDos",
+    "icon": "",
+    "tagline": "A minimalist, private to-do app for two — shared lists with real-time sync.",
+    "description": "A Flutter productivity app for the Mac built around a simple idea: task management is better when it's shared with exactly one person, kept private and clutter-free.\n\n• Shared collections that live exclusively between you and your chosen partner.\n• Real-time collaboration — both people see task updates the moment they happen.\n• Quick sign-in with existing email credentials, no new account to set up.\n• Automatic sorting that separates completed items so remaining work stays front and center.\n• A deliberately minimal, distraction-free interface — and always free to use.",
+    "stack": ["flutter", "firebase"],
+    "year": "2024",
+    "role": "Flutter Developer",
+    "liveUrl": "https://apps.apple.com/pk/app/twodos-collaborative-todos/id6469541755",
+    "githubUrl": "",
+    "images": []
+  },
+  {
     "name": "Rosterify",
     "icon": "/assets/rosterify_icon.png",
-    "description": "Take control of your Khata, take control of your life.",
-    "readMoreLink": "mailto:daniyal.ahmad.rizwan@hotmail.com",
-    "stack": [
-        "Flutter",
-        "Material UI"
-    ],
-    "images": [
-        "/assets/rosterify-app-1.png",
-        "/assets/rosterify-app-2.png",
-        "/assets/rosterify-app-3.png"
-    ]
+    "tagline": "A Flutter app for staff shift scheduling and team rostering.",
+    "description": "A cross-platform Flutter app for managing staff shifts and team rosters with a clean, mobile-first interface.\n\n• Built shift scheduling, roster management, and availability tracking in Flutter.\n• Backed by Firebase for authentication and real-time data sync across devices.\n• Designed an intuitive Material UI experience optimized for quick day-to-day use.",
+    "stack": ["flutter", "firebase"],
+    "year": "2023",
+    "role": "Personal Project",
+    "liveUrl": "https://apps.apple.com/pk/app/rosterify-schedule-your-day/id6740922629",
+    "githubUrl": "",
+    "images": ["/assets/rosterify-app-1.png", "/assets/rosterify-app-2.png"]
+  },
+  {
+    "name": "Khata at Home",
+    "icon": "/assets/khata_at_home_icon.png",
+    "tagline": "Take control of your Khata, take control of your life.",
+    "description": "A cross-platform ledger and expense-tracking app built in Flutter.\n\n• Offline-first sync so records stay available without a connection.\n• Multi-currency entries for flexible bookkeeping.\n• Lightweight local storage with SQLite for fast, reliable access.\n• Clean, approachable Material UI designed for everyday personal finance.",
+    "stack": ["flutter", "sqlite"],
+    "year": "2023",
+    "role": "Personal Project",
+    "liveUrl": "https://apps.apple.com/pk/app/khata-at-home/id6754578951",
+    "githubUrl": "",
+    "images": ["/assets/khata-at-home-app-1.png"]
   },
   {
     "name": "XiltriX",
     "icon": "/assets/xiltrix_icon.png",
-    "description": "A cloud-based SaaS platform for real-time lab environment monitoring and sensor data analytics. Built with React, Node.js, Material-UI, and AWS, supporting continuous environmental tracking through smart sensor integrations. Led frontend interface design with a focus on hierarchical data handling, real-time updates, and developer-friendly UX patterns. Developed a custom logging system to track user interactions and feature usage, enhancing operational visibility and platform optimization. Structured the UI for scalability and usability, improving data comprehension and responsiveness for scientific and administrative users.",
-    "readMoreLink": "mailto:daniyal.ahmad.rizwan@hotmail.com",
-    "stack": [
-        "React",
-        "MUI",
-        "Node",
-        "AWS"
-    ],
-    "images": [
-        "/assets/xiltrix-app-1.png",
-        "/assets/xiltrix-app-1.png",
-        "/assets/xiltrix-app-1.png"
-    ]
+    "tagline": "Cloud SaaS for real-time lab environment monitoring and sensor data analytics.",
+    "description": "A cloud-based SaaS platform for real-time lab environment monitoring and sensor data analytics.\n\n• Built with React, Node.js, Material-UI, and AWS, supporting continuous environmental tracking via smart sensor integrations.\n• Led frontend interface design with a focus on hierarchical data handling, real-time updates, and developer-friendly UX patterns.\n• Developed a custom logging system to track user interactions and feature usage, improving operational visibility.\n• Structured the UI for scalability and usability, improving data comprehension for scientific and administrative users.",
+    "stack": ["react", "node", "mui", "postgresql"],
+    "year": "2022",
+    "role": "Frontend Engineer",
+    "liveUrl": "",
+    "githubUrl": "",
+    "images": ["/assets/xiltrix-app-1.png"]
   },
   {
     "name": "IshowroomPro",
     "icon": "/assets/ishowroompro_icon.png",
-    "description": "A content management platform powering dynamic digital showrooms across mobile and web. • Developed frontend apps in Vue.js and Ionic, and backend services in Node.js and Eve. • Designed and containerized microservices using Docker, and deployed with Kubernetes for seamless scalability. • Conducted full E2E testing across platforms, ensuring consistent cross-platform functionality for both iOS and Android. • Focused on performance, maintainability, and modular design, enabling faster onboarding and feature rollout for partner teams.",
-    "readMoreLink": "mailto:daniyal.ahmad.rizwan@hotmail.com",
-    "stack": [
-        "Vue",
-        "Vuetify",
-        "Ionic",
-        "Express",
-        "Djandgo",
-        "Docker",
-        "Kubernetes"
-    ],
-    "images": [
-        "/assets/ishowroompro-app-1.png",
-        "/assets/ishowroompro-app-1.png",
-        "/assets/ishowroompro-app-1.png"
-    ]
+    "tagline": "A CMS powering dynamic digital showrooms across mobile and web.",
+    "description": "A content management platform powering dynamic digital showrooms across mobile and web.\n\n• Built frontends in Vue.js and Ionic, and backend services in Node.js and Express.\n• Designed and containerized microservices with Docker, deployed on Kubernetes for seamless scalability.\n• Ran full E2E testing across platforms for consistent iOS and Android behavior.\n• Focused on performance, maintainability, and modular design for faster partner onboarding and feature rollout.",
+    "stack": ["vue", "vuetify", "ionic", "express", "docker"],
+    "year": "2021",
+    "role": "Full-Stack Developer",
+    "liveUrl": "",
+    "githubUrl": "",
+    "images": ["/assets/ishowroompro-app-1.png"]
+  },
+  {
+    "name": "Mastery (MasterMind)",
+    "icon": "/assets/mastery_icon.png",
+    "tagline": "A logistics app helping long-haul drivers with route optimization, safety, and compliance.",
+    "description": "A logistics-focused mobile solution built in React Native to support long-haul drivers with route optimization, safety, and compliance.\n\n• Built a React Native app for drivers on long routes, designed to boost efficiency and safety.\n• Delivered real-time route guidance, live ETAs, and integration with MasterMind's cloud-based TMS for load and navigation data.\n• Designed an offline-first architecture for uninterrupted access to critical route data in low-connectivity areas.\n• Optimized performance for multi-day continuous usage, improving reliability and satisfaction.\n• Translated complex logistics functionality into intuitive, touch-friendly interfaces.",
+    "stack": ["reactnative", "redux", "graphql"],
+    "year": "2023",
+    "role": "React Native Developer",
+    "liveUrl": "",
+    "githubUrl": "",
+    "images": []
+  },
+  {
+    "name": "BeautyPass",
+    "icon": "/assets/beautypass.png",
+    "tagline": "A lifestyle platform connecting fashion models with businesses for mutual promotion.",
+    "description": "A lifestyle and influencer engagement platform connecting the world's largest community of fashion models with businesses for mutual promotion.\n\n• Developed and optimized the React Native mobile app with a smooth, responsive, brand-aligned UI.\n• Integrated RESTful APIs for product and service listings, member authentication, and real-time offers.\n• Implemented social sharing to drive promotions via Instagram and other platforms.\n• Reduced load times through code optimization and lazy loading.\n• Collaborated with designers to build pixel-perfect, accessible, mobile-first layouts.",
+    "stack": ["reactnative", "redux", "javascript"],
+    "year": "2023",
+    "role": "React Native Developer @ Devsinc",
+    "liveUrl": "",
+    "githubUrl": "",
+    "images": []
+  },
+  {
+    "name": "Noor · Soul Tracker",
+    "icon": "/assets/noor-icon.png",
+    "tagline": "A spiritual wellness app that turns daily worship into a single soul score.",
+    "description": "A privacy-first iOS and Android app that helps users track their daily acts of worship and reflect on their spiritual progress in one place.\n\n• A weighted soul score that blends prayers, Quran reading, Zikar, and Sadaqa into a single daily measure of effort.\n• A Noor avatar with seven emotional states that respond to your actions and the time of day.\n• Location-based prayer times using established Islamic calculation methods.\n• A haptic Zikar counter, Quran progress tracking by page/Ayah/Juz, and charity logging.\n• Full Apple Watch support with compass and complications, plus customizable daily streaks.\n• On-device data with no account or server transmission — your practice stays private.",
+    "stack": ["swift", "kotlin"],
+    "year": "2025",
+    "role": "iOS & Android Developer",
+    "liveUrl": "https://apps.apple.com/pk/app/noor-soul-tracker/id6767209251",
+    "githubUrl": "",
+    "images": []
   }
 ]

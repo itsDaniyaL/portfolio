@@ -15,7 +15,7 @@ export const contactThemes = {
       primary: { main: "#874B7A" },
       secondary: { main: "#DEC4D8" },
       background: { default: "#FFE9FA", paper: "#DEC4D8" },
-      text: { primary: "#E6E1E3", secondary: "#301C2C" },
+      text: { primary: "#301C2C", secondary: "#5D3C56" },
     },
   }),
   dark: createTheme({
@@ -23,8 +23,8 @@ export const contactThemes = {
       mode: "dark",
       primary: { main: "#9D6FFF" },
       secondary: { main: "#874B7A" },
-      background: { default: "#301C2C", paper: "#874B7A" },
-      text: { primary: "#301C2C", secondary: "#E6E1E3" },
+      background: { default: "#301C2C", paper: "#4A2B45" },
+      text: { primary: "#E6E1E3", secondary: "#DEC4D8" },
     },
   }),
 };
@@ -34,54 +34,56 @@ export const overviewThemes = {
     palette: {
       mode: "light",
       primary: { main: "#0F766E" },
-      background: { default: "#F0EFE6", paper: "#FFFFF5" },
-      text: { primary: "#064E3B", secondary: "#047857" },
+      background: { default: "#F0EFE6", paper: "#FFFFFF" },
+      text: { primary: "#1A1A1A", secondary: "#4A4A4A" },
     },
   }),
   dark: createTheme({
     palette: {
       mode: "dark",
       primary: { main: "#34D399" },
-      background: { default: "#141314", paper: "#100E0F" },
-      text: { primary: "#D1FAE5", secondary: "#6EE7B7" },
+      background: { default: "#141314", paper: "#1C1B1D" },
+      text: { primary: "#E6E1E3", secondary: "#A09A9D" },
     },
   }),
 };
 
+// paper = card background, default = inner panel / page bg
 export const projectsThemes = {
   light: createTheme({
     palette: {
       mode: "light",
       primary: { main: "#0F766E" },
-      background: { default: "#E1F1E1", paper: "#F0FFF0" },
-      text: { primary: "#064E3B", secondary: "#047857" },
+      background: { default: "#E8F5E9", paper: "#C8E6C9" },
+      text: { primary: "#1B5E20", secondary: "#388E3C" },
     },
   }),
   dark: createTheme({
     palette: {
       mode: "dark",
       primary: { main: "#34D399" },
-      background: { default: "#1D221D", paper: "#0F100C" },
-      text: { primary: "#D1FAE5", secondary: "#6EE7B7" },
+      background: { default: "#1D221D", paper: "#384739" },
+      text: { primary: "#E6E1E3", secondary: "#6EE7B7" },
     },
   }),
 };
 
+// paper = card background, default = inner panel / page bg
 export const experienceThemes = {
   light: createTheme({
     palette: {
       mode: "light",
       primary: { main: "#0F766E" },
-      background: { default: "#DDF7FF", paper: "#121D20" },
-      text: { primary: "#064E3B", secondary: "#047857" },
+      background: { default: "#DDF7FF", paper: "#A8DFF0" },
+      text: { primary: "#004D5A", secondary: "#006B7E" },
     },
   }),
   dark: createTheme({
     palette: {
       mode: "dark",
       primary: { main: "#34D399" },
-      background: { default: "#1C2B30", paper: "#121D20" },
-      text: { primary: "#D1FAE5", secondary: "#6EE7B7" },
+      background: { default: "#1C2B30", paper: "#2A444C" },
+      text: { primary: "#E6E1E3", secondary: "#B2EBF2" },
     },
   }),
 };
@@ -91,16 +93,16 @@ export const privacyThemes = {
     palette: {
       mode: "light",
       primary: { main: "#0F766E" },
-      background: { default: "#171719", paper: "#121D20" },
-      text: { primary: "#064E3B", secondary: "#047857" },
+      background: { default: "#F5F5F5", paper: "#FFFFFF" },
+      text: { primary: "#1A1A1A", secondary: "#4A4A4A" },
     },
   }),
   dark: createTheme({
     palette: {
       mode: "dark",
       primary: { main: "#34D399" },
-      background: { default: "#171719", paper: "#121D20" },
-      text: { primary: "#D1FAE5", secondary: "#6EE7B7" },
+      background: { default: "#171719", paper: "#1E1E21" },
+      text: { primary: "#E6E1E3", secondary: "#A09A9D" },
     },
   }),
 };
@@ -141,6 +143,11 @@ export const AppThemeProvider = ({
     const saved = localStorage.getItem("themeMode");
     if (saved === "light" || saved === "dark") setMode(saved);
   }, []);
+
+  // Keep Tailwind's dark class in sync so dark: variants work on pages like Privacy Policy
+  useEffect(() => {
+    document.documentElement.classList.toggle("dark", mode === "dark");
+  }, [mode]);
 
   const theme = useMemo(() => {
     switch (page) {

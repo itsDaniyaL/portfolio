@@ -1,4 +1,5 @@
 {
+  "homepage": "https://itsdaniyal.github.io/portfolio/",
   "name": "portfolio",
   "version": "0.1.0",
   "private": true,
@@ -15,6 +16,8 @@
     "@types/node": "^16.18.121",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
+    "firebase": "^12.13.0",
+    "framer-motion": "^12.40.0",
     "pdfjs-dist": "^5.4.54",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -31,7 +34,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -52,6 +57,7 @@
     ]
   },
   "devDependencies": {
+    "gh-pages": "^6.3.0",
     "tailwindcss": "^3.4.17"
   }
 }

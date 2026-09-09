@@ -203,12 +203,12 @@ export default function Overview() {
               lineHeight: 1.7,
             }}
           >
-            Frontend-focused Software Engineer with 5 years of experience
-            building scalable web and mobile applications using React, React
-            Native, Vue.js, Flutter, TypeScript, and Node.js. I focus on
-            intuitive, accessible, and performance-optimized experiences — from
-            production apps on the App Store and Google Play to full-stack
-            platforms with robust backends.
+            Frontend-focused Software Engineer with 5+ years building and
+            shipping cross-platform mobile apps in React Native, Flutter, and
+            TypeScript — several live on the App Store and Google Play. I turn
+            Figma designs into pixel-accurate, accessible UI (Material 3, Apple
+            Human Interface Guidelines) and build reusable component systems,
+            backed by React, Vue.js, and Node.js full-stack experience.
           </motion.p>
 
           {/* Quick stats */}

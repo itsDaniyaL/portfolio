@@ -1,10 +1,20 @@
 [
   {
+    "company": "Self-Employed",
+    "position": "Freelance Frontend Developer",
+    "location": "Remote",
+    "startDate": "Dec 2025",
+    "endDate": "Present",
+    "tagline": "Freelance React & Next.js delivery for clients, plus native iOS/Android rebuilds in Swift and Kotlin.",
+    "description": "• Delivered freelance frontend development for clients using React, Next.js, and TypeScript, building responsive, component-driven interfaces from design handoff through to production.\n• Expanded into native iOS and Android development (Swift/Kotlin), transitioning Oye Cab from its original Flutter build to a native rebuild.\n• Shipped Noor · Soul Tracker, a spiritual wellness tracker for Apple Watch, iPhone, and iPad, to the Apple App Store.",
+    "stack": ["react", "next", "typescript", "swift", "kotlin"]
+  },
+  {
     "company": "Stackfinity",
     "position": "Senior Frontend Software Engineer",
     "location": "Remote",
     "startDate": "Oct 2024",
-    "endDate": "Present",
+    "endDate": "Oct 2025",
     "tagline": "Cross-platform mobile apps in React Native & Flutter across language learning, healthcare, and transport.",
     "description": "• Built cross-platform mobile apps in React Native and Flutter across language learning, healthcare, and transportation.\n• Designed scalable, reusable UI components and design systems leveraging Material UI and Material 3.\n• Translated Figma and Adobe XD handoffs into pixel-accurate, accessible UI, applying Material 3 and Apple Human Interface Guidelines for platform-native iOS and Android experiences.\n• Integrated frontends with RESTful APIs and PostgreSQL backends for smooth data handling and reliable performance.\n• Drove performance optimizations (lazy loading, efficient state management with Redux/Provider), reducing load times and improving responsiveness.\n• Implemented secure flows including Stripe payments, OTP verification, and encrypted real-time messaging.\n• Released apps to the Apple App Store and Google Play, ensuring compliance with platform standards.\n• Applied analytics insights to resolve UX pain points, driving measurable engagement gains.",
     "stack": ["reactnative", "flutter", "typescript", "redux", "stripe", "postgresql", "firebase", "figma"]

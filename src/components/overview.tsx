@@ -203,12 +203,16 @@ export default function Overview() {
               lineHeight: 1.7,
             }}
           >
-            Frontend-focused Software Engineer with 5+ years building and
-            shipping cross-platform mobile apps in React Native, Flutter, and
-            TypeScript — several live on the App Store and Google Play. I turn
-            Figma designs into pixel-accurate, accessible UI (Material 3, Apple
-            Human Interface Guidelines) and build reusable component systems,
-            backed by React, Vue.js, and Node.js full-stack experience.
+            Frontend developer with 5+ years shipping consumer-facing web and
+            mobile products in React, Flutter, Next.js, TypeScript, Vue.js, and
+            React Native. I specialize in building reusable,
+            configuration-driven components and design systems — documented in
+            Storybook — that let teams iterate on features fast, and in turning
+            product requirements and Figma handoffs into polished, accessible,
+            production-ready UI. Experienced with e-commerce, payments, and
+            real-time flows, performance optimization at scale, legacy
+            refactoring, and Agile delivery backed by CI/CD, TDD/BDD, and A/B
+            testing, with a habit of mentoring teammates along the way.
           </motion.p>
 
           {/* Quick stats */}
